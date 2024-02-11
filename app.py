@@ -4,6 +4,7 @@ from streamlit_option_menu import option_menu
 from src.utils import display_gif, play_music
 from src.page_two_her import create_a_container
 from src.page_four_poetry import create_the_tabs
+from src.poetry_constant import page_2_intro
 
 
 def main():
@@ -36,6 +37,7 @@ def main():
 
     if choose == "Her":
         # play_music("her/Akhiyaan_Gulaab.mp3")
+        st.text(page_2_intro)
         display_gif("her/gifs/Author_1.gif")
         create_a_container()
 
