@@ -26,7 +26,7 @@ def display_gif(file_path: str) -> None:
         data_url = base64.b64encode(contents).decode("utf-8")
 
     st.markdown(
-        f"""<div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+        f"""<div style="display: flex; justify-content: center; align-items: center; height: 70vh;">
                 <img align="center" src="data:image/gif;base64,{data_url}" alt="cat gif">
             </div>""",
         unsafe_allow_html=True,

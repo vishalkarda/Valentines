@@ -3,6 +3,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from src.utils import display_gif, play_music
 from src.page_two_her import create_a_container
+from src.page_four_poetry import create_the_tabs
 
 
 def main():
@@ -28,18 +29,32 @@ def main():
                  "automatically in the background when you visit her content. She's full of elegance and smartness but "
                  "will act dumb on purpose sometimes to make you feel normal !! "
                  "No mere human could match that, so let's dive into world.")
+        st.text("")
+        st.text("")
+        st.text("")
         display_gif("her/gifs/riddhi_magic.gif")
 
     if choose == "Her":
         # play_music("her/Akhiyaan_Gulaab.mp3")
+        display_gif("her/gifs/Author_1.gif")
         create_a_container()
 
     if choose == "Tech Break":
-        st.write("Page 3")
+        display_gif("her/gifs/technical_error.gif")
 
     elif choose == "The Poetry":
-        st.write(f"""અમારા પ્રેમના બગીચામાં, જ્યાં દરેક ક્ષણ સૌંદર્યથી મોટું હોવું, હું તમને આ હૃદયસ્પર્શી પંક્તિઓ પેશ કરું છું. આ પંક્તિઓ ભક્તિના અમ્રુતના ગરજનો ધરે છે, જે અમને પ્રેમના આલંબને મોટું બનાવી લઇ રહે છે.""")
+        st.write(f"""
+        So now we are onto the poetry section and hopefully the background music is still working.
+        Dumbledore said, 'Words are, in my not-so-humble opinion, our most inexhaustible source of magic, 
+        capable of both inflicting injury and remedying it.
+        Let's see these below words have magic.
+        """)
+        st.write("""
+                 Like I always tell you its both the poet in me and the poetry in you.
+                 I'm not really sure if the verses below will do the justice to the fact how amazing you are !!
+        """)
         # play_music("her/Pehle_Bhi_Main.mp3")
+        create_the_tabs()
 
     elif choose == "Author":
         col1, col2 = st.columns([0.8, 0.2])
