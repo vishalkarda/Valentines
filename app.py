@@ -1,29 +1,14 @@
-import base64
 import streamlit as st
 
 from streamlit_option_menu import option_menu
-
-
-def play_music(file_path: str) -> None:
-    """function to play music on streamlit page"""
-
-    with open(file_path, "rb") as f:
-        data = f.read()
-        b64 = base64.b64encode(data).decode()
-        md = f"""
-            <audio autoplay loop>
-                <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
-            </audio>
-            """
-        st.markdown(
-            md,
-            unsafe_allow_html=True,
-        )
+from src.utils import display_gif, play_music
+from src.page_two_her import create_a_container
 
 
 def main():
     """Main function to run the file"""
     st.title("HaaaaaaaaVeeee you met Riddhi ?!! ")
+    st.text("")
 
     with st.sidebar:
         choose = option_menu("Main Menu", ["Getting Started", "Her", "Tech Break", "The Poetry", "Author"],
@@ -39,21 +24,22 @@ def main():
                              )
 
     if choose == "Getting Started":
-        st.write("Welcome to the Streamlit world of Riddhi Joshi. She has superpowers songs play"
+        st.write("Welcome to the Magical Streamlit World of Riddhi Joshi. She has superpowers songs play"
                  "automatically in the background when you visit her content. She's full of elegance and smartness but "
-                 "will act dumb on purpose sometimes to make you feel normal !!"
+                 "will act dumb on purpose sometimes to make you feel normal !! "
                  "No mere human could match that, so let's dive into world.")
+        display_gif("her/gifs/riddhi_magic.gif")
 
     if choose == "Her":
-        st.write("Page 1")
-        play_music("her/Akhiyaan_Gulaab.mp3")
+        # play_music("her/Akhiyaan_Gulaab.mp3")
+        create_a_container()
 
     if choose == "Tech Break":
         st.write("Page 3")
 
     elif choose == "The Poetry":
-        st.write("Page 2")
-        play_music("her/Pehle_Bhi_Main.mp3")
+        st.write(f"""અમારા પ્રેમના બગીચામાં, જ્યાં દરેક ક્ષણ સૌંદર્યથી મોટું હોવું, હું તમને આ હૃદયસ્પર્શી પંક્તિઓ પેશ કરું છું. આ પંક્તિઓ ભક્તિના અમ્રુતના ગરજનો ધરે છે, જે અમને પ્રેમના આલંબને મોટું બનાવી લઇ રહે છે.""")
+        # play_music("her/Pehle_Bhi_Main.mp3")
 
     elif choose == "Author":
         col1, col2 = st.columns([0.8, 0.2])
